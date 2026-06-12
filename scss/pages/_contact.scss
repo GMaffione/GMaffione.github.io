@@ -1,0 +1,87 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.contact {
+  padding: 80px 0;
+  background: $white;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 64px;
+    align-items: start;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  &__info {
+    h2 {
+      color: $navy;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      color: $text-mid;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    &-lead {
+      color: $text-mid;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+
+    &-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba($gold, 0.1);
+      border-radius: $radius;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    strong {
+      display: block;
+      font-size: 0.82rem;
+      color: $gray;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    span {
+      font-size: 0.9rem;
+      color: $text;
+      font-weight: 500;
+    }
+  }
+
+  &__form {
+    background: $off-white;
+    border: 1px solid $gray-light;
+    border-radius: $radius-lg;
+    padding: 36px;
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: $navy;
+      margin-bottom: 20px;
+    }
+  }
+}

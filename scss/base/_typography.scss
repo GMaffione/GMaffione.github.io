@@ -1,0 +1,31 @@
+@use '../abstracts/variables' as *;
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $navy;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.5px;
+
+  span {
+    color: $gold;
+  }
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: $gray;
+  margin-bottom: 2.5rem;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba($gold, 0.12);
+  color: $gold;
+  border: 1px solid rgba($gold, 0.3);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}

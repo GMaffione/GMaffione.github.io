@@ -1,0 +1,67 @@
+@use 'sass:color';
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.form-group {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $navy;
+    margin-bottom: 6px;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 11px 16px;
+    border: 1.5px solid $gray-light;
+    border-radius: $radius;
+    font-size: 0.92rem;
+    font-family: $font-main;
+    color: $text;
+    background: $white;
+    transition: $transition;
+    outline: none;
+
+    &:focus {
+      border-color: $navy;
+      box-shadow: 0 0 0 3px rgba($navy, 0.08);
+    }
+
+    &::placeholder {
+      color: color.adjust($gray, $lightness: 15%);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @include small {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-success {
+  display: none;
+  background: rgba($gold, 0.1);
+  border: 1px solid rgba($gold, 0.3);
+  border-radius: $radius;
+  padding: 16px 20px;
+  text-align: center;
+  color: $navy;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 16px;
+}

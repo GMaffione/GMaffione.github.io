@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti — Giovanni Maffione</title>
+  <meta name="description" content="Contatta Giovanni Maffione per opportunità professionali in Supply Chain, Logistics e Operations Management.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contatta Giovanni Maffione">
+  <meta property="og:description" content="Sono disponibile per ruoli in Supply Chain, Operations e Business Management. Scrivimi!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gmaffione.github.io/giovanni-site/contatti.html">
+  <meta property="og:image" content="img/profile.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- Checkbox per menu mobile (no JS) -->
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__brand">GM<span>.</span></a>
+    <ul class="navbar__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">Chi sono</a></li>
+      <li><a href="index.html#skills">Competenze</a></li>
+      <li><a href="index.html#experience">Esperienza</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+    <label for="nav-toggle" class="navbar__hamburger-label">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+  <div class="navbar__mobile">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">Chi sono</a>
+    <a href="index.html#skills">Competenze</a>
+    <a href="index.html#experience">Esperienza</a>
+    <a href="cv.html">CV</a>
+    <a href="contatti.html">Contatti</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <h1>Contat<span>tami</span></h1>
+    <p>Sono disponibile per nuove opportunità professionali</p>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact">
+  <div class="container">
+    <div class="contact__inner">
+
+      <!-- INFO -->
+      <div class="contact__info">
+        <h2 class="section-title">Parliamo di <span>lavoro</span></h2>
+        <p class="section-sub">Sei un recruiter o un'azienda alla ricerca di un professionista in Supply Chain, Operations o Business Management?</p>
+        <p class="contact__info-lead">
+          Sono aperto a valutare nuove opportunità in ambito <strong>Logistics</strong>, <strong>Supply Chain Planning</strong> e <strong>Operations Management</strong>. Compila il form e ti risponderò entro 24 ore.
+        </p>
+
+        <div class="contact__item">
+          <div class="contact__item-icon">📍</div>
+          <div>
+            <strong>Sede</strong>
+            <span>Margherita di Savoia (BT), Italia</span>
+          </div>
+        </div>
+
+        <div class="contact__item">
+          <div class="contact__item-icon">💼</div>
+          <div>
+            <strong>LinkedIn</strong>
+            <span>
+              <a href="https://www.linkedin.com/in/giovanni-maffione-20443a142" target="_blank" rel="noopener">giovanni-maffione</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="contact__item">
+          <div class="contact__item-icon">🐙</div>
+          <div>
+            <strong>GitHub</strong>
+            <span>
+              <a href="https://github.com/GMaffione" target="_blank" rel="noopener">GMaffione</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="contact__item">
+          <div class="contact__item-icon">🎓</div>
+          <div>
+            <strong>Disponibilità</strong>
+            <span>Aperto a nuove opportunità</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="contact__form">
+        <h3>Inviami un messaggio</h3>
+        <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome *</label>
+              <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+            </div>
+            <div class="form-group">
+              <label for="cognome">Cognome *</label>
+              <input type="text" id="cognome" name="cognome" placeholder="Il tuo cognome" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="tua@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="azienda">Azienda</label>
+            <input type="text" id="azienda" name="azienda" placeholder="Nome dell'azienda (opzionale)">
+          </div>
+
+          <div class="form-group">
+            <label for="ruolo">Tipo di opportunità *</label>
+            <select id="ruolo" name="ruolo" required>
+              <option value="" disabled selected>Seleziona...</option>
+              <option value="supply-chain">Supply Chain / Logistics</option>
+              <option value="operations">Operations Management</option>
+              <option value="business">Business / Strategy</option>
+              <option value="altro">Altro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="messaggio">Messaggio *</label>
+            <textarea id="messaggio" name="messaggio" placeholder="Descrivimi brevemente l'opportunità o come posso aiutarti..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            Invia messaggio →
+          </button>
+
+          <div class="form-success" id="formSuccess">
+            ✅ Messaggio inviato! Ti risponderò entro 24 ore.
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">GM<span>.</span></div>
+    <ul class="footer__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+      <li><a href="https://www.linkedin.com/in/giovanni-maffione-20443a142" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/GMaffione" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+    <p class="footer__copy">© 2026 Giovanni Maffione. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+
+  const fields = form.querySelectorAll('[required]');
+  let valid = true;
+  fields.forEach(f => {
+    if (!f.value.trim()) {
+      f.style.borderColor = '#dc3545';
+      valid = false;
+    } else {
+      f.style.borderColor = '';
+    }
+  });
+
+  if (!valid) return;
+
+  success.style.display = 'block';
+  form.reset();
+
+  setTimeout(() => {
+    success.style.display = 'none';
+  }, 5000);
+}
+</script>
+</body>
+</html>

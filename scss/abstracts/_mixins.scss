@@ -1,0 +1,29 @@
+// ═══════════════════════════════════
+// BREAKPOINTS
+// ═══════════════════════════════════
+@mixin mobile {
+  @media (max-width: 768px) { @content; }
+}
+
+@mixin small {
+  @media (max-width: 480px) { @content; }
+}
+
+@mixin print {
+  @media print { @content; }
+}
+
+// ═══════════════════════════════════
+// FLEX & GRID
+// ═══════════════════════════════════
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

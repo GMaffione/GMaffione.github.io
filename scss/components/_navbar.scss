@@ -1,0 +1,123 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Nasconde il checkbox ma lo mantiene funzionale
+.nav-toggle {
+  display: none;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba($navy-dark, 0.97);
+  backdrop-filter: blur(10px);
+  padding: 14px 0;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+
+  &__inner {
+    @include flex-between;
+  }
+
+  &__brand {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: $white;
+    letter-spacing: -0.3px;
+
+    span { color: $gold; }
+    &:hover { color: $white; }
+  }
+
+  &__links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+
+    a {
+      color: rgba($white, 0.8);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $gold;
+        transition: $transition;
+      }
+
+      &:hover {
+        color: $white;
+        &::after { width: 100%; }
+      }
+    }
+  }
+
+  // Etichetta hamburger (visibile solo su mobile)
+  &__hamburger-label {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+
+    span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: $white;
+      border-radius: 2px;
+      transition: $transition;
+    }
+  }
+
+  &__mobile {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: $navy-dark;
+    flex-direction: column;
+
+    a {
+      color: rgba($white, 0.85);
+      font-size: 0.95rem;
+      padding: 12px 24px;
+      font-weight: 500;
+      border-bottom: 1px solid rgba($white, 0.06);
+      display: block;
+
+      &:hover {
+        color: $gold;
+        background: rgba($white, 0.04);
+      }
+    }
+  }
+
+  @include mobile {
+    &__links { display: none; }
+    &__hamburger-label { display: flex; }
+  }
+}
+
+// Apertura menu mobile tramite checkbox (no JS)
+.nav-toggle:checked ~ .navbar .navbar__mobile {
+  max-height: 400px;
+}
+
+.nav-toggle:checked ~ .navbar .navbar__hamburger-label span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle:checked ~ .navbar .navbar__hamburger-label span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked ~ .navbar .navbar__hamburger-label span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
